@@ -1,0 +1,1 @@
+For the blue ball suspended above the wooden block stack, set the mass to 1.11345 kg, approximately 0.222689 times the original mass.

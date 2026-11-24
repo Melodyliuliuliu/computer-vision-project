@@ -1,0 +1,7 @@
+[
+  {
+    "op": "replace",
+    "path": "/objects/Domino_Teal/rigid_body/mass",
+    "value": 0.015130517473
+  }
+]

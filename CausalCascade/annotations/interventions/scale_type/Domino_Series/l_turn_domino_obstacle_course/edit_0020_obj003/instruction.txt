@@ -1,0 +1,1 @@
+Make the last member of the first leg dominoes, counted from the group's start slightly shorter in height. Preserve its visible orientation and mass, and keep its lowest point at the same height.

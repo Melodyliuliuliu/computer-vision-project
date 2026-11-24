@@ -1,0 +1,1 @@
+For the tilted red domino at the front-left start of the L-shaped row, set the mass to 6.57607 kg, approximately 6.57607 times the original mass.

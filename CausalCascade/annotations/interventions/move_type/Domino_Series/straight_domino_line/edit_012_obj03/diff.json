@@ -1,0 +1,30 @@
+{
+  "scene_id": "Domino_Series/straight_domino_line",
+  "edit_id": "edit_012_obj03",
+  "edit_type": "move",
+  "operation": "set_location",
+  "object_index": 3,
+  "object_key": "Domino_Wood2",
+  "object_alias": "the last domino in the two tan dominoes",
+  "original_location": [
+    -7.450580596923828e-09,
+    0.0,
+    0.9499999284744263
+  ],
+  "new_location": [
+    -7.450580596923828e-09,
+    1.4000000208616257,
+    0.9499999284744263
+  ],
+  "delta_world": [
+    -0.0,
+    1.4000000208616257,
+    0.0
+  ],
+  "semantic_direction": "laterally_toward_back_of_scene",
+  "reference_scale": {
+    "type": "domino_transverse_width",
+    "multiplier": 1.75
+  },
+  "rotation_unchanged": true
+}

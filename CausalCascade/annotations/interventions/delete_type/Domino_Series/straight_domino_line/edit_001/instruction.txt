@@ -1,0 +1,1 @@
+Delete the first purple domino to the right of the wooden pair.

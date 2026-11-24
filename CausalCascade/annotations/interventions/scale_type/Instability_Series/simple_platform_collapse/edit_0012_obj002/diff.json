@@ -1,0 +1,62 @@
+{
+  "scene_id": "Instability_Series/simple_platform_collapse",
+  "edit_id": "edit_0012_obj002",
+  "edit_type": "scale",
+  "operation": "set_scale_and_location",
+  "object_index": 2,
+  "object_key": "Tower_Base",
+  "object_alias": "the red left support",
+  "object_kind": "block",
+  "axis_mode": "longest",
+  "resolved_local_axes": [
+    2
+  ],
+  "original_local_extents": [
+    0.4000000059604645,
+    0.4000000059604645,
+    4.0
+  ],
+  "scale_factors_local": [
+    1.0,
+    1.0,
+    0.7
+  ],
+  "original_scale": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "new_scale": [
+    1.0,
+    1.0,
+    0.699999988079071
+  ],
+  "original_dimensions": [
+    0.4000000059604645,
+    0.4000000059604645,
+    4.0
+  ],
+  "new_dimensions": [
+    0.4000000059604645,
+    0.4000000059604645,
+    2.799999952316284
+  ],
+  "original_location": [
+    0.0,
+    0.0,
+    2.0
+  ],
+  "new_location": [
+    0.0,
+    0.0,
+    1.399999976158142
+  ],
+  "location_compensation_world": [
+    0.0,
+    0.0,
+    -0.6000000238418579
+  ],
+  "anchor_strategy": "preserve_world_bottom",
+  "mass_kg_unchanged": 10.0,
+  "rotation_unchanged": true
+}

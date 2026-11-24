@@ -1,0 +1,1 @@
+For the separate green pillar to the right of the structure, set the mass to 252.184 kg, approximately 50.4368 times the original mass.

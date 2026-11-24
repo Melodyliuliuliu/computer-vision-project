@@ -1,0 +1,1 @@
+For the first upright wooden domino after the tilted teal domino, set the mass to 25.4993 kg, approximately 50.9987 times the original mass.

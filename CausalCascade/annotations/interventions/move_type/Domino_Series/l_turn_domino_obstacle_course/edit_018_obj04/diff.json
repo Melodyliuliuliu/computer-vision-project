@@ -1,0 +1,30 @@
+{
+  "scene_id": "Domino_Series/l_turn_domino_obstacle_course",
+  "edit_id": "edit_018_obj04",
+  "edit_type": "move",
+  "operation": "set_location",
+  "object_index": 4,
+  "object_key": "Domino_4_Corner",
+  "object_alias": "the purple corner domino",
+  "original_location": [
+    0.0,
+    0.0,
+    0.949999988079071
+  ],
+  "new_location": [
+    0.6359987401430478,
+    -0.3974992066662051,
+    0.949999988079071
+  ],
+  "delta_world": [
+    0.6359987401430478,
+    -0.3974992066662051,
+    -0.0
+  ],
+  "semantic_direction": "laterally_toward_back_of_scene",
+  "reference_scale": {
+    "type": "scene_local_active_object_scale",
+    "multiplier": 1.5
+  },
+  "rotation_unchanged": true
+}

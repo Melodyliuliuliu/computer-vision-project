@@ -1,0 +1,1 @@
+Make the purple corner domino narrower. Preserve its visible orientation and mass, and keep its lowest point at the same height.

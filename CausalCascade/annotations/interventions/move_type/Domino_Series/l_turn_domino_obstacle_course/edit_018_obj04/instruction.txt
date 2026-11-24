@@ -1,0 +1,1 @@
+Reposition the purple corner domino sideways toward the back of the scene by about one and a half object widths, clearly offsetting it from its original interaction path.

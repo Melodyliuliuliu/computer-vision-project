@@ -1,0 +1,168 @@
+{
+  "graph_id": "Domino_Series/l_turn_domino_obstacle_course",
+  "series": "Domino_Series",
+  "scene": "l_turn_domino_obstacle_course",
+  "source": {
+    "metadata_json": "l_turn_domino_obstacle_course.json",
+    "frame_count": 120,
+    "fps": 24
+  },
+  "participant_registry": [
+    {
+      "participant_id": "starter",
+      "canonical_name": "leaning red starter domino",
+      "metadata_keys": [
+        "Domino_1"
+      ],
+      "participant_type": "dynamic_object",
+      "visual_reference": "the red plank leaning at the front of the central cluster"
+    },
+    {
+      "participant_id": "first_leg",
+      "canonical_name": "first leg dominoes",
+      "metadata_keys": [
+        "Domino_2",
+        "Domino_3"
+      ],
+      "participant_type": "dynamic_object_group",
+      "visual_reference": "the blue and green blocks immediately behind the starter"
+    },
+    {
+      "participant_id": "corner",
+      "canonical_name": "purple corner domino",
+      "metadata_keys": [
+        "Domino_4_Corner"
+      ],
+      "participant_type": "dynamic_object",
+      "visual_reference": "the purple block turning the chain around the corner"
+    },
+    {
+      "participant_id": "second_leg",
+      "canonical_name": "second leg dominoes",
+      "metadata_keys": [
+        "Domino_5",
+        "Domino_6",
+        "Domino_7"
+      ],
+      "participant_type": "dynamic_object_group",
+      "visual_reference": "the tan, white, and black end blocks on the left side"
+    },
+    {
+      "participant_id": "target",
+      "canonical_name": "gold target ball",
+      "metadata_keys": [
+        "Final_Target_Sphere"
+      ],
+      "participant_type": "dynamic_object",
+      "visual_reference": "the shiny gold ball beside the left end of the cluster"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e01",
+      "canonical_description": "The leaning red starter domino rotates down onto the tabletop.",
+      "participants": [
+        "starter"
+      ],
+      "event_type": "rotation_tipping",
+      "cascade_role": "trigger",
+      "temporal_stage": 1,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e02",
+      "canonical_description": "The starter transfers the collapse through the blue and green first-leg dominoes.",
+      "participants": [
+        "starter",
+        "first_leg"
+      ],
+      "event_type": "propagation",
+      "cascade_role": "mediator",
+      "temporal_stage": 2,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e03",
+      "canonical_description": "The toppling reaches the purple corner domino and changes direction around the turn.",
+      "participants": [
+        "first_leg",
+        "corner"
+      ],
+      "event_type": "contact_collision",
+      "cascade_role": "mediator",
+      "temporal_stage": 3,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e04",
+      "canonical_description": "The collapse propagates through the tan, white, and black end blocks.",
+      "participants": [
+        "corner",
+        "second_leg"
+      ],
+      "event_type": "propagation",
+      "cascade_role": "mediator",
+      "temporal_stage": 4,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e05",
+      "canonical_description": "The falling end blocks contact the gold target and set it rolling toward the collapsed pile.",
+      "participants": [
+        "second_leg",
+        "target"
+      ],
+      "event_type": "target_state_change",
+      "cascade_role": "outcome",
+      "temporal_stage": 5,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e06",
+      "canonical_description": "The target ball and all dominoes settle in and beside the central pile.",
+      "participants": [
+        "target",
+        "starter",
+        "first_leg",
+        "corner",
+        "second_leg"
+      ],
+      "event_type": "stabilization",
+      "cascade_role": "terminal_state",
+      "temporal_stage": 6,
+      "observability": "visible_across_adjacent_frames"
+    }
+  ],
+  "causal_edges": [
+    {
+      "edge_id": "c01",
+      "source": "e01",
+      "target": "e02",
+      "relation": "leads_to"
+    },
+    {
+      "edge_id": "c02",
+      "source": "e02",
+      "target": "e03",
+      "relation": "leads_to"
+    },
+    {
+      "edge_id": "c03",
+      "source": "e03",
+      "target": "e04",
+      "relation": "leads_to"
+    },
+    {
+      "edge_id": "c04",
+      "source": "e04",
+      "target": "e05",
+      "relation": "leads_to"
+    },
+    {
+      "edge_id": "c05",
+      "source": "e05",
+      "target": "e06",
+      "relation": "leads_to"
+    }
+  ]
+}

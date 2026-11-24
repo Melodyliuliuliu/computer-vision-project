@@ -1,0 +1,697 @@
+{
+  "graph_id": "Instability_Series/simple_platform_collapse",
+  "series": "Instability_Series",
+  "scene": "simple_platform_collapse",
+  "source_event_graph": "event_graph.json",
+  "summary": {
+    "question_count": 18,
+    "diagnostic_dimensions": {
+      "causal_pathway": 5,
+      "event_occurrence": 2,
+      "outcome_termination": 3,
+      "scene_consistency": 4,
+      "temporal_ordering": 4
+    },
+    "diagnostic_subdimensions": {
+      "direct_edge_relation": 5,
+      "entity_persistence": 1,
+      "event_pair_order": 4,
+      "identity_geometry_integrity": 1,
+      "mediator_occurrence": 1,
+      "outcome_occurrence": 2,
+      "static_scene_camera_stability": 1,
+      "terminal_state_status": 1,
+      "trajectory_continuity": 1,
+      "trigger_occurrence": 1
+    },
+    "answer_types": {
+      "binary": 4,
+      "causal_relation": 5,
+      "entity_persistence_status": 1,
+      "identity_geometry_status": 1,
+      "static_scene_status": 1,
+      "temporal_relation": 4,
+      "terminal_state_status": 1,
+      "trajectory_continuity_status": 1
+    },
+    "ground_truth_answer_codes": {
+      "a_before_b": 3,
+      "a_directly_leads_to_b": 3,
+      "b_before_a": 1,
+      "b_directly_leads_to_a": 2,
+      "consistent": 1,
+      "continuous": 1,
+      "preserved": 1,
+      "reached_and_remains_terminal": 1,
+      "stable": 1,
+      "yes": 4
+    }
+  },
+  "questions": [
+    {
+      "question": "Is this trigger event visibly observed: \"The dark bridge plank loses balance and rotates with its right side descending\"?",
+      "answer_type": "binary",
+      "answer_options": [
+        "yes",
+        "no"
+      ],
+      "answer_option_codes": [
+        "yes",
+        "no"
+      ],
+      "ground_truth_answer": "yes",
+      "ground_truth_answer_code": "yes",
+      "diagnostic_dimension": "event_occurrence",
+      "diagnostic_subdimension": "trigger_occurrence",
+      "source_event_ids": [
+        "e01"
+      ],
+      "source_edge_ids": [],
+      "source_temporal_stages": [
+        1
+      ],
+      "source_participant_ids": [
+        "plank"
+      ],
+      "applicability_rule": "always",
+      "question_id": "qv2_001"
+    },
+    {
+      "question": "Is this mediator event visibly observed: \"The descending plank pushes the green support into a rightward lean while slipping off both supports\"?",
+      "answer_type": "binary",
+      "answer_options": [
+        "yes",
+        "no"
+      ],
+      "answer_option_codes": [
+        "yes",
+        "no"
+      ],
+      "ground_truth_answer": "yes",
+      "ground_truth_answer_code": "yes",
+      "diagnostic_dimension": "event_occurrence",
+      "diagnostic_subdimension": "mediator_occurrence",
+      "source_event_ids": [
+        "e02"
+      ],
+      "source_edge_ids": [],
+      "source_temporal_stages": [
+        2
+      ],
+      "source_participant_ids": [
+        "plank",
+        "green",
+        "red"
+      ],
+      "applicability_rule": "always",
+      "question_id": "qv2_002"
+    },
+    {
+      "question": "What direct causal relation is visibly supported between these events? (A) The dark bridge plank loses balance and rotates with its right side descending. (B) The descending plank pushes the green support into a rightward lean while slipping off both supports.",
+      "answer_type": "causal_relation",
+      "answer_options": [
+        "A directly leads to B.",
+        "B directly leads to A.",
+        "Both events occur, but no direct causal relation is visible.",
+        "One or both events do not occur."
+      ],
+      "answer_option_codes": [
+        "a_directly_leads_to_b",
+        "b_directly_leads_to_a",
+        "both_occur_without_direct_relation",
+        "one_or_both_events_absent"
+      ],
+      "ground_truth_answer": "A directly leads to B.",
+      "ground_truth_answer_code": "a_directly_leads_to_b",
+      "diagnostic_dimension": "causal_pathway",
+      "diagnostic_subdimension": "direct_edge_relation",
+      "source_event_ids": [
+        "e01",
+        "e02"
+      ],
+      "source_edge_ids": [
+        "c01"
+      ],
+      "source_temporal_stages": [
+        1,
+        2
+      ],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "relation_requires_both_events",
+      "option_event_map": {
+        "A": "e01",
+        "B": "e02"
+      },
+      "question_id": "qv2_003"
+    },
+    {
+      "question": "What direct causal relation is visibly supported between these events? (A) The freed red support tips left as the dark plank drops to the tabletop. (B) The descending plank pushes the green support into a rightward lean while slipping off both supports.",
+      "answer_type": "causal_relation",
+      "answer_options": [
+        "A directly leads to B.",
+        "B directly leads to A.",
+        "Both events occur, but no direct causal relation is visible.",
+        "One or both events do not occur."
+      ],
+      "answer_option_codes": [
+        "a_directly_leads_to_b",
+        "b_directly_leads_to_a",
+        "both_occur_without_direct_relation",
+        "one_or_both_events_absent"
+      ],
+      "ground_truth_answer": "B directly leads to A.",
+      "ground_truth_answer_code": "b_directly_leads_to_a",
+      "diagnostic_dimension": "causal_pathway",
+      "diagnostic_subdimension": "direct_edge_relation",
+      "source_event_ids": [
+        "e02",
+        "e03"
+      ],
+      "source_edge_ids": [
+        "c02"
+      ],
+      "source_temporal_stages": [
+        2,
+        3
+      ],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "relation_requires_both_events",
+      "option_event_map": {
+        "A": "e03",
+        "B": "e02"
+      },
+      "question_id": "qv2_004"
+    },
+    {
+      "question": "What direct causal relation is visibly supported between these events? (A) The green support continues tipping and falls flat to the right. (B) The descending plank pushes the green support into a rightward lean while slipping off both supports.",
+      "answer_type": "causal_relation",
+      "answer_options": [
+        "A directly leads to B.",
+        "B directly leads to A.",
+        "Both events occur, but no direct causal relation is visible.",
+        "One or both events do not occur."
+      ],
+      "answer_option_codes": [
+        "a_directly_leads_to_b",
+        "b_directly_leads_to_a",
+        "both_occur_without_direct_relation",
+        "one_or_both_events_absent"
+      ],
+      "ground_truth_answer": "B directly leads to A.",
+      "ground_truth_answer_code": "b_directly_leads_to_a",
+      "diagnostic_dimension": "causal_pathway",
+      "diagnostic_subdimension": "direct_edge_relation",
+      "source_event_ids": [
+        "e02",
+        "e04"
+      ],
+      "source_edge_ids": [
+        "c03"
+      ],
+      "source_temporal_stages": [
+        2,
+        3
+      ],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "relation_requires_both_events",
+      "option_event_map": {
+        "A": "e04",
+        "B": "e02"
+      },
+      "question_id": "qv2_005"
+    },
+    {
+      "question": "What direct causal relation is visibly supported between these events? (A) The freed red support tips left as the dark plank drops to the tabletop. (B) All three structural pieces settle collapsed and separated on the tabletop.",
+      "answer_type": "causal_relation",
+      "answer_options": [
+        "A directly leads to B.",
+        "B directly leads to A.",
+        "Both events occur, but no direct causal relation is visible.",
+        "One or both events do not occur."
+      ],
+      "answer_option_codes": [
+        "a_directly_leads_to_b",
+        "b_directly_leads_to_a",
+        "both_occur_without_direct_relation",
+        "one_or_both_events_absent"
+      ],
+      "ground_truth_answer": "A directly leads to B.",
+      "ground_truth_answer_code": "a_directly_leads_to_b",
+      "diagnostic_dimension": "causal_pathway",
+      "diagnostic_subdimension": "direct_edge_relation",
+      "source_event_ids": [
+        "e03",
+        "e05"
+      ],
+      "source_edge_ids": [
+        "c04"
+      ],
+      "source_temporal_stages": [
+        3,
+        4
+      ],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "relation_requires_both_events",
+      "option_event_map": {
+        "A": "e03",
+        "B": "e05"
+      },
+      "question_id": "qv2_006"
+    },
+    {
+      "question": "What direct causal relation is visibly supported between these events? (A) The green support continues tipping and falls flat to the right. (B) All three structural pieces settle collapsed and separated on the tabletop.",
+      "answer_type": "causal_relation",
+      "answer_options": [
+        "A directly leads to B.",
+        "B directly leads to A.",
+        "Both events occur, but no direct causal relation is visible.",
+        "One or both events do not occur."
+      ],
+      "answer_option_codes": [
+        "a_directly_leads_to_b",
+        "b_directly_leads_to_a",
+        "both_occur_without_direct_relation",
+        "one_or_both_events_absent"
+      ],
+      "ground_truth_answer": "A directly leads to B.",
+      "ground_truth_answer_code": "a_directly_leads_to_b",
+      "diagnostic_dimension": "causal_pathway",
+      "diagnostic_subdimension": "direct_edge_relation",
+      "source_event_ids": [
+        "e04",
+        "e05"
+      ],
+      "source_edge_ids": [
+        "c05"
+      ],
+      "source_temporal_stages": [
+        3,
+        4
+      ],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "relation_requires_both_events",
+      "option_event_map": {
+        "A": "e04",
+        "B": "e05"
+      },
+      "question_id": "qv2_007"
+    },
+    {
+      "question": "What is the observed temporal relation between these events? (A) The dark bridge plank loses balance and rotates with its right side descending. (B) The descending plank pushes the green support into a rightward lean while slipping off both supports.",
+      "answer_type": "temporal_relation",
+      "answer_options": [
+        "A occurs before B.",
+        "B occurs before A.",
+        "A and B occur approximately simultaneously.",
+        "One or both events do not occur."
+      ],
+      "answer_option_codes": [
+        "a_before_b",
+        "b_before_a",
+        "approximately_simultaneous",
+        "one_or_both_events_absent"
+      ],
+      "ground_truth_answer": "A occurs before B.",
+      "ground_truth_answer_code": "a_before_b",
+      "diagnostic_dimension": "temporal_ordering",
+      "diagnostic_subdimension": "event_pair_order",
+      "source_event_ids": [
+        "e01",
+        "e02"
+      ],
+      "source_edge_ids": [
+        "c01"
+      ],
+      "source_temporal_stages": [
+        1,
+        2
+      ],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "order_requires_both_events",
+      "option_event_map": {
+        "A": "e01",
+        "B": "e02"
+      },
+      "question_id": "qv2_008"
+    },
+    {
+      "question": "What is the observed temporal relation between these events? (A) The descending plank pushes the green support into a rightward lean while slipping off both supports. (B) The freed red support tips left as the dark plank drops to the tabletop.",
+      "answer_type": "temporal_relation",
+      "answer_options": [
+        "A occurs before B.",
+        "B occurs before A.",
+        "A and B occur approximately simultaneously.",
+        "One or both events do not occur."
+      ],
+      "answer_option_codes": [
+        "a_before_b",
+        "b_before_a",
+        "approximately_simultaneous",
+        "one_or_both_events_absent"
+      ],
+      "ground_truth_answer": "A occurs before B.",
+      "ground_truth_answer_code": "a_before_b",
+      "diagnostic_dimension": "temporal_ordering",
+      "diagnostic_subdimension": "event_pair_order",
+      "source_event_ids": [
+        "e02",
+        "e03"
+      ],
+      "source_edge_ids": [
+        "c02"
+      ],
+      "source_temporal_stages": [
+        2,
+        3
+      ],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "order_requires_both_events",
+      "option_event_map": {
+        "A": "e02",
+        "B": "e03"
+      },
+      "question_id": "qv2_009"
+    },
+    {
+      "question": "What is the observed temporal relation between these events? (A) The freed red support tips left as the dark plank drops to the tabletop. (B) All three structural pieces settle collapsed and separated on the tabletop.",
+      "answer_type": "temporal_relation",
+      "answer_options": [
+        "A occurs before B.",
+        "B occurs before A.",
+        "A and B occur approximately simultaneously.",
+        "One or both events do not occur."
+      ],
+      "answer_option_codes": [
+        "a_before_b",
+        "b_before_a",
+        "approximately_simultaneous",
+        "one_or_both_events_absent"
+      ],
+      "ground_truth_answer": "A occurs before B.",
+      "ground_truth_answer_code": "a_before_b",
+      "diagnostic_dimension": "temporal_ordering",
+      "diagnostic_subdimension": "event_pair_order",
+      "source_event_ids": [
+        "e03",
+        "e05"
+      ],
+      "source_edge_ids": [
+        "c04"
+      ],
+      "source_temporal_stages": [
+        3,
+        4
+      ],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "order_requires_both_events",
+      "option_event_map": {
+        "A": "e03",
+        "B": "e05"
+      },
+      "question_id": "qv2_010"
+    },
+    {
+      "question": "What is the observed temporal relation between these events? (A) All three structural pieces settle collapsed and separated on the tabletop. (B) The green support continues tipping and falls flat to the right.",
+      "answer_type": "temporal_relation",
+      "answer_options": [
+        "A occurs before B.",
+        "B occurs before A.",
+        "A and B occur approximately simultaneously.",
+        "One or both events do not occur."
+      ],
+      "answer_option_codes": [
+        "a_before_b",
+        "b_before_a",
+        "approximately_simultaneous",
+        "one_or_both_events_absent"
+      ],
+      "ground_truth_answer": "B occurs before A.",
+      "ground_truth_answer_code": "b_before_a",
+      "diagnostic_dimension": "temporal_ordering",
+      "diagnostic_subdimension": "event_pair_order",
+      "source_event_ids": [
+        "e04",
+        "e05"
+      ],
+      "source_edge_ids": [
+        "c05"
+      ],
+      "source_temporal_stages": [
+        3,
+        4
+      ],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "order_requires_both_events",
+      "option_event_map": {
+        "A": "e05",
+        "B": "e04"
+      },
+      "question_id": "qv2_011"
+    },
+    {
+      "question": "Is this downstream outcome visibly reached: \"The freed red support tips left as the dark plank drops to the tabletop\"?",
+      "answer_type": "binary",
+      "answer_options": [
+        "yes",
+        "no"
+      ],
+      "answer_option_codes": [
+        "yes",
+        "no"
+      ],
+      "ground_truth_answer": "yes",
+      "ground_truth_answer_code": "yes",
+      "diagnostic_dimension": "outcome_termination",
+      "diagnostic_subdimension": "outcome_occurrence",
+      "source_event_ids": [
+        "e03"
+      ],
+      "source_edge_ids": [],
+      "source_temporal_stages": [
+        3
+      ],
+      "source_participant_ids": [
+        "red",
+        "plank"
+      ],
+      "applicability_rule": "always",
+      "question_id": "qv2_012"
+    },
+    {
+      "question": "Is this downstream outcome visibly reached: \"The green support continues tipping and falls flat to the right\"?",
+      "answer_type": "binary",
+      "answer_options": [
+        "yes",
+        "no"
+      ],
+      "answer_option_codes": [
+        "yes",
+        "no"
+      ],
+      "ground_truth_answer": "yes",
+      "ground_truth_answer_code": "yes",
+      "diagnostic_dimension": "outcome_termination",
+      "diagnostic_subdimension": "outcome_occurrence",
+      "source_event_ids": [
+        "e04"
+      ],
+      "source_edge_ids": [],
+      "source_temporal_stages": [
+        3
+      ],
+      "source_participant_ids": [
+        "green"
+      ],
+      "applicability_rule": "always",
+      "question_id": "qv2_013"
+    },
+    {
+      "question": "What happens with respect to this stated final state: \"All three structural pieces settle collapsed and separated on the tabletop\"?",
+      "answer_type": "terminal_state_status",
+      "answer_options": [
+        "The stated final state is reached and remains terminal.",
+        "The stated final state is reached but does not remain terminal.",
+        "The stated final state is not reached."
+      ],
+      "answer_option_codes": [
+        "reached_and_remains_terminal",
+        "reached_but_not_terminal",
+        "stated_final_state_not_reached"
+      ],
+      "ground_truth_answer": "The stated final state is reached and remains terminal.",
+      "ground_truth_answer_code": "reached_and_remains_terminal",
+      "diagnostic_dimension": "outcome_termination",
+      "diagnostic_subdimension": "terminal_state_status",
+      "source_event_ids": [
+        "e05"
+      ],
+      "source_edge_ids": [],
+      "source_temporal_stages": [
+        4
+      ],
+      "source_participant_ids": [
+        "plank",
+        "red",
+        "green"
+      ],
+      "applicability_rule": "always",
+      "question_id": "qv2_014"
+    },
+    {
+      "question": "Which statement best describes the persistence and count of the visible active objects?",
+      "answer_type": "entity_persistence_status",
+      "answer_options": [
+        "Entity persistence is consistent.",
+        "Unexplained disappearance occurs.",
+        "Unexplained duplication occurs.",
+        "Both unexplained disappearance and duplication occur."
+      ],
+      "answer_option_codes": [
+        "consistent",
+        "unexplained_disappearance",
+        "unexplained_duplication",
+        "disappearance_and_duplication"
+      ],
+      "ground_truth_answer": "Entity persistence is consistent.",
+      "ground_truth_answer_code": "consistent",
+      "diagnostic_dimension": "scene_consistency",
+      "diagnostic_subdimension": "entity_persistence",
+      "source_event_ids": [],
+      "source_edge_ids": [],
+      "source_temporal_stages": [],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "always",
+      "scope": "All visible active objects; physically explained exits are consistent.",
+      "question_id": "qv2_015"
+    },
+    {
+      "question": "Which statement best describes the spatial continuity of the active-object trajectories?",
+      "answer_type": "trajectory_continuity_status",
+      "answer_options": [
+        "Object trajectories are spatially continuous.",
+        "Unexplained teleportation occurs.",
+        "Multiple trajectory discontinuities occur."
+      ],
+      "answer_option_codes": [
+        "continuous",
+        "unexplained_teleportation",
+        "multiple_discontinuities"
+      ],
+      "ground_truth_answer": "Object trajectories are spatially continuous.",
+      "ground_truth_answer_code": "continuous",
+      "diagnostic_dimension": "scene_consistency",
+      "diagnostic_subdimension": "trajectory_continuity",
+      "source_event_ids": [],
+      "source_edge_ids": [],
+      "source_temporal_stages": [],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "always",
+      "scope": "All visible active-object trajectories; ordinary occlusion is not teleportation.",
+      "question_id": "qv2_016"
+    },
+    {
+      "question": "Which statement best describes active-object identity, appearance, and rigid geometry?",
+      "answer_type": "identity_geometry_status",
+      "answer_options": [
+        "Object identity and rigid geometry are preserved.",
+        "An identity or persistent appearance switch occurs.",
+        "A rigid body visibly deforms.",
+        "Unexplained fragmentation or fusion occurs.",
+        "Multiple identity or geometry violations occur."
+      ],
+      "answer_option_codes": [
+        "preserved",
+        "identity_or_appearance_switch",
+        "rigid_body_deformation",
+        "fragmentation_or_fusion",
+        "multiple_integrity_violations"
+      ],
+      "ground_truth_answer": "Object identity and rigid geometry are preserved.",
+      "ground_truth_answer_code": "preserved",
+      "diagnostic_dimension": "scene_consistency",
+      "diagnostic_subdimension": "identity_geometry_integrity",
+      "source_event_ids": [],
+      "source_edge_ids": [],
+      "source_temporal_stages": [],
+      "source_participant_ids": [
+        "green",
+        "plank",
+        "red"
+      ],
+      "applicability_rule": "always",
+      "scope": "All visible active rigid bodies; normal rotation, perspective, and lighting changes are allowed.",
+      "question_id": "qv2_017"
+    },
+    {
+      "question": "Which statement best describes the anchored scene structures and camera viewpoint?",
+      "answer_type": "static_scene_status",
+      "answer_options": [
+        "Anchored structures and the fixed camera remain stable.",
+        "An anchored structure moves, deforms, appears, or disappears.",
+        "The camera viewpoint changes.",
+        "Both anchored-structure and camera changes occur."
+      ],
+      "answer_option_codes": [
+        "stable",
+        "anchored_structure_changes",
+        "camera_changes",
+        "structure_and_camera_change"
+      ],
+      "ground_truth_answer": "Anchored structures and the fixed camera remain stable.",
+      "ground_truth_answer_code": "stable",
+      "diagnostic_dimension": "scene_consistency",
+      "diagnostic_subdimension": "static_scene_camera_stability",
+      "source_event_ids": [],
+      "source_edge_ids": [],
+      "source_temporal_stages": [],
+      "source_participant_ids": [],
+      "applicability_rule": "always",
+      "scope": "All anchored scene context and the required fixed camera, including anchored objects not in the participant registry.",
+      "question_id": "qv2_018"
+    }
+  ]
+}

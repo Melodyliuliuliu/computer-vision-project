@@ -1,0 +1,1 @@
+For the yellow domino immediately after the corner, set the mass to 0.0841197 kg, approximately 0.0841197 times the original mass.

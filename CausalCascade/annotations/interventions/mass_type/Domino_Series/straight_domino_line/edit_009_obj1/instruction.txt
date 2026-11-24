@@ -1,0 +1,1 @@
+For the first purple domino to the right of the wooden pair, set the mass to 15.7972 kg, approximately 31.5944 times the original mass.

@@ -1,0 +1,133 @@
+{
+  "graph_id": "Instability_Series/simple_platform_collapse",
+  "series": "Instability_Series",
+  "scene": "simple_platform_collapse",
+  "source": {
+    "metadata_json": "simple_platform_collapse.json",
+    "frame_count": 120,
+    "fps": 24
+  },
+  "participant_registry": [
+    {
+      "participant_id": "plank",
+      "canonical_name": "dark bridge plank",
+      "metadata_keys": [
+        "Heavy_Top_Block"
+      ],
+      "participant_type": "dynamic_object",
+      "visual_reference": "the dark horizontal plank spanning two supports"
+    },
+    {
+      "participant_id": "red",
+      "canonical_name": "red left support",
+      "metadata_keys": [
+        "Tower_Base"
+      ],
+      "participant_type": "dynamic_object",
+      "visual_reference": "the thin red upright support on the left"
+    },
+    {
+      "participant_id": "green",
+      "canonical_name": "green right support",
+      "metadata_keys": [
+        "Target_Pillar"
+      ],
+      "participant_type": "dynamic_object",
+      "visual_reference": "the translucent green upright support on the right"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e01",
+      "canonical_description": "The dark bridge plank loses balance and rotates with its right side descending.",
+      "participants": [
+        "plank"
+      ],
+      "event_type": "rotation_tipping",
+      "cascade_role": "trigger",
+      "temporal_stage": 1,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e02",
+      "canonical_description": "The descending plank pushes the green support into a rightward lean while slipping off both supports.",
+      "participants": [
+        "plank",
+        "green",
+        "red"
+      ],
+      "event_type": "contact_collision",
+      "cascade_role": "mediator",
+      "temporal_stage": 2,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e03",
+      "canonical_description": "The freed red support tips left as the dark plank drops to the tabletop.",
+      "participants": [
+        "red",
+        "plank"
+      ],
+      "event_type": "support_loss",
+      "cascade_role": "outcome",
+      "temporal_stage": 3,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e04",
+      "canonical_description": "The green support continues tipping and falls flat to the right.",
+      "participants": [
+        "green"
+      ],
+      "event_type": "falling",
+      "cascade_role": "outcome",
+      "temporal_stage": 3,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e05",
+      "canonical_description": "All three structural pieces settle collapsed and separated on the tabletop.",
+      "participants": [
+        "plank",
+        "red",
+        "green"
+      ],
+      "event_type": "stabilization",
+      "cascade_role": "terminal_state",
+      "temporal_stage": 4,
+      "observability": "visible_across_adjacent_frames"
+    }
+  ],
+  "causal_edges": [
+    {
+      "edge_id": "c01",
+      "source": "e01",
+      "target": "e02",
+      "relation": "leads_to"
+    },
+    {
+      "edge_id": "c02",
+      "source": "e02",
+      "target": "e03",
+      "relation": "leads_to"
+    },
+    {
+      "edge_id": "c03",
+      "source": "e02",
+      "target": "e04",
+      "relation": "leads_to"
+    },
+    {
+      "edge_id": "c04",
+      "source": "e03",
+      "target": "e05",
+      "relation": "leads_to"
+    },
+    {
+      "edge_id": "c05",
+      "source": "e04",
+      "target": "e05",
+      "relation": "leads_to"
+    }
+  ]
+}

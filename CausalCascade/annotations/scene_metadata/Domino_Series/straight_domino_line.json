@@ -1,0 +1,421 @@
+{
+  "blend_entry": "Domino_Series.straight_domino_line",
+  "blend_file_name": "straight_domino_line.blend",
+  "blend_parent_directory": "Domino_Series",
+  "scene": {
+    "name": "Scene",
+    "frame_start": 1,
+    "frame_end": 100,
+    "frame_current": 1,
+    "fps": 24,
+    "gravity": [
+      0.0,
+      0.0,
+      -9.8100004196167
+    ],
+    "world": "World"
+  },
+  "objects": {
+    "BackWall": {
+      "type": "MESH",
+      "location": [
+        0.0,
+        10.0,
+        4.5
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        20.0,
+        1.0,
+        10.0
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "PASSIVE",
+        "mass": 1.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Domino_Purple": {
+      "type": "MESH",
+      "location": [
+        1.5,
+        0.0,
+        0.9499999284744263
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.20000000298023224,
+        0.800000011920929,
+        1.7999999523162842
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "ACTIVE",
+        "mass": 0.5,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Domino_Purple.001": {
+      "type": "MESH",
+      "location": [
+        3.0,
+        0.0,
+        0.9499999284744263
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.20000000298023224,
+        0.800000011920929,
+        1.7999999523162842
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "ACTIVE",
+        "mass": 0.5,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Domino_Teal": {
+      "type": "MESH",
+      "location": [
+        -2.5,
+        0.0,
+        0.9079387784004211
+      ],
+      "rotation_euler": [
+        0.0,
+        0.5235987901687622,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.20000000298023224,
+        0.800000011920929,
+        1.7999999523162842
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "ACTIVE",
+        "mass": 0.5,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Domino_Wood1": {
+      "type": "MESH",
+      "location": [
+        -1.5000001192092896,
+        0.0,
+        0.9499999284744263
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.20000000298023224,
+        0.800000011920929,
+        1.7999999523162842
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "ACTIVE",
+        "mass": 0.5,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Domino_Wood2": {
+      "type": "MESH",
+      "location": [
+        -7.450580596923828e-09,
+        0.0,
+        0.9499999284744263
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.20000000298023224,
+        0.800000011920929,
+        1.7999999523162842
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "ACTIVE",
+        "mass": 0.5,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Floor": {
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        -0.5
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        20.0,
+        20.0,
+        1.0
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "PASSIVE",
+        "mass": 1.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "LeftWall": {
+      "type": "MESH",
+      "location": [
+        -10.0,
+        0.0,
+        4.5
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        1.0,
+        20.0,
+        10.0
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "PASSIVE",
+        "mass": 1.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "MainCamera": {
+      "type": "CAMERA",
+      "location": [
+        -3.742250919342041,
+        -13.846932411193848,
+        3.6789538860321045
+      ],
+      "rotation_euler": [
+        1.4326804876327515,
+        -7.087064659572206e-07,
+        -0.2469717115163803
+      ],
+      "scale": [
+        1.0,
+        0.9999999403953552,
+        1.0
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": null
+    },
+    "Vase_Back1": {
+      "type": "MESH",
+      "location": [
+        -2.5,
+        4.0,
+        0.7999999523162842
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.5,
+        0.5,
+        1.5
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "ACTIVE",
+        "mass": 2.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Vase_Back2": {
+      "type": "MESH",
+      "location": [
+        -1.5,
+        4.5,
+        0.7999999523162842
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.5,
+        0.5,
+        1.5
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "ACTIVE",
+        "mass": 2.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Vase_Right": {
+      "type": "MESH",
+      "location": [
+        3.5799999237060547,
+        3.5,
+        0.7999999523162842
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.5,
+        0.5,
+        1.5
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "ACTIVE",
+        "mass": 2.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    }
+  }
+}

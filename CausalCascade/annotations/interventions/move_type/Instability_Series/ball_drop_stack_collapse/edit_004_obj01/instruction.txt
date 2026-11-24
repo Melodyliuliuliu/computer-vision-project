@@ -1,0 +1,1 @@
+Reposition the blue falling ball sideways toward the front of the scene by about one object width, offsetting it from its original interaction path.

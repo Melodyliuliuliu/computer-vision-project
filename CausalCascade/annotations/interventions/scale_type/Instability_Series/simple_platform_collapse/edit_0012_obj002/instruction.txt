@@ -1,0 +1,1 @@
+Make the red left support smaller along its longest dimension. Preserve its visible orientation and mass, and keep its lowest point at the same height.

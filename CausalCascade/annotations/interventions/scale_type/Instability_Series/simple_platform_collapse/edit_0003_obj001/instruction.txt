@@ -1,0 +1,1 @@
+Make the dark bridge plank narrower. Preserve its visible orientation and mass.

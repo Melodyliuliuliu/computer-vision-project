@@ -1,0 +1,353 @@
+{
+  "blend_entry": "Instability_Series.simple_platform_collapse",
+  "blend_file_name": "simple_platform_collapse.blend",
+  "blend_parent_directory": "Instability_Series",
+  "scene": {
+    "name": "Scene",
+    "frame_start": 1,
+    "frame_end": 120,
+    "frame_current": 1,
+    "fps": 24,
+    "gravity": [
+      0.0,
+      0.0,
+      -9.8100004196167
+    ],
+    "world": "World"
+  },
+  "objects": {
+    "Camera": {
+      "type": "CAMERA",
+      "location": [
+        17.26974105834961,
+        -24.794565200805664,
+        5.635863780975342
+      ],
+      "rotation_euler": [
+        1.5220469236373901,
+        -1.3156727618479636e-06,
+        0.546107292175293
+      ],
+      "scale": [
+        1.0,
+        1.000000238418579,
+        1.0000001192092896
+      ],
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": null
+    },
+    "Detail_Decor_0": {
+      "type": "MESH",
+      "location": [
+        -2.0,
+        4.0,
+        0.5
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.799999475479126,
+        0.7999997138977051,
+        0.800000011920929
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "PASSIVE",
+        "mass": 1.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Detail_Decor_1": {
+      "type": "MESH",
+      "location": [
+        9.329999923706055,
+        -4.0,
+        0.42000001668930054
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.799999475479126,
+        0.7999997138977051,
+        0.800000011920929
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "PASSIVE",
+        "mass": 1.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Detail_Decor_2": {
+      "type": "MESH",
+      "location": [
+        8.0,
+        9.319999694824219,
+        0.21000000834465027
+      ],
+      "rotation_euler": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        1.100000023841858,
+        1.100000023841858,
+        0.30000001192092896
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "PASSIVE",
+        "mass": 1.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Detail_Decor_3": {
+      "type": "MESH",
+      "location": [
+        -4.960000038146973,
+        -3.5,
+        0.42000001668930054
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "PASSIVE",
+        "mass": 1.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Detail_Decor_4": {
+      "type": "MESH",
+      "location": [
+        10.0,
+        -2.0,
+        0.38999998569488525
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.799999475479126,
+        0.7999997138977051,
+        0.800000011920929
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "PASSIVE",
+        "mass": 1.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Ground": {
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        50.0,
+        50.0,
+        0.0
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "PASSIVE",
+        "mass": 1.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Heavy_Top_Block": {
+      "type": "MESH",
+      "location": [
+        1.7999999523162842,
+        0.0,
+        4.599999904632568
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        5.0,
+        1.0,
+        1.2000000476837158
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "ACTIVE",
+        "mass": 50.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Target_Pillar": {
+      "type": "MESH",
+      "location": [
+        4.369999885559082,
+        0.0,
+        1.5
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.6000000238418579,
+        0.6000000238418579,
+        3.0
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "ACTIVE",
+        "mass": 5.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    },
+    "Tower_Base": {
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dimensions": [
+        0.4000000059604645,
+        0.4000000059604645,
+        4.0
+      ],
+      "parent": null,
+      "visible_render": true,
+      "custom_properties": {},
+      "rigid_body": {
+        "type": "ACTIVE",
+        "mass": 10.0,
+        "friction": 0.5,
+        "restitution": 0.10000000149011612,
+        "linear_damping": 0.03999999910593033,
+        "angular_damping": 0.10000000149011612
+      }
+    }
+  }
+}

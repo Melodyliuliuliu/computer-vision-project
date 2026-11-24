@@ -1,0 +1,7 @@
+[
+  {
+    "op": "replace",
+    "path": "/objects/Ball/rigid_body/mass",
+    "value": 21.226988297797
+  }
+]

@@ -1,0 +1,127 @@
+{
+  "graph_id": "Instability_Series/ball_drop_stack_collapse",
+  "series": "Instability_Series",
+  "scene": "ball_drop_stack_collapse",
+  "source": {
+    "metadata_json": "ball_drop_stack_collapse.json",
+    "frame_count": 120,
+    "fps": 24
+  },
+  "participant_registry": [
+    {
+      "participant_id": "ball",
+      "canonical_name": "blue falling ball",
+      "metadata_keys": [
+        "Ball"
+      ],
+      "participant_type": "dynamic_object",
+      "visual_reference": "the blue ball descending from above the wooden stack"
+    },
+    {
+      "participant_id": "stack",
+      "canonical_name": "wooden plank stack",
+      "metadata_keys": [
+        "Block_0_0",
+        "Block_0_1",
+        "Block_1_0",
+        "Block_1_1",
+        "Block_2_0",
+        "Block_2_1",
+        "Block_3_0",
+        "Block_3_1",
+        "Block_4_0",
+        "Block_4_1",
+        "Block_5_0",
+        "Block_5_1"
+      ],
+      "participant_type": "dynamic_object_group",
+      "visual_reference": "the compact reddish stack near the center-left"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "e01",
+      "canonical_description": "The blue ball descends toward the upper-right part of the wooden stack.",
+      "participants": [
+        "ball"
+      ],
+      "event_type": "falling",
+      "cascade_role": "trigger",
+      "temporal_stage": 1,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e02",
+      "canonical_description": "The ball strikes the upper-right planks of the stack.",
+      "participants": [
+        "ball",
+        "stack"
+      ],
+      "event_type": "contact_collision",
+      "cascade_role": "mediator",
+      "temporal_stage": 2,
+      "observability": "directly_visible"
+    },
+    {
+      "event_id": "e03",
+      "canonical_description": "Several upper planks are ejected, rotating upward and outward while the lower stack stays partly standing.",
+      "participants": [
+        "stack"
+      ],
+      "event_type": "support_loss",
+      "cascade_role": "outcome",
+      "temporal_stage": 3,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e04",
+      "canonical_description": "The deflected ball lands on the floor to the right as the loose planks fall around the stack.",
+      "participants": [
+        "ball",
+        "stack"
+      ],
+      "event_type": "falling",
+      "cascade_role": "outcome",
+      "temporal_stage": 4,
+      "observability": "visible_across_adjacent_frames"
+    },
+    {
+      "event_id": "e05",
+      "canonical_description": "The ball and scattered planks settle around a partially collapsed central stack.",
+      "participants": [
+        "ball",
+        "stack"
+      ],
+      "event_type": "stabilization",
+      "cascade_role": "terminal_state",
+      "temporal_stage": 5,
+      "observability": "visible_across_adjacent_frames"
+    }
+  ],
+  "causal_edges": [
+    {
+      "edge_id": "c01",
+      "source": "e01",
+      "target": "e02",
+      "relation": "leads_to"
+    },
+    {
+      "edge_id": "c02",
+      "source": "e02",
+      "target": "e03",
+      "relation": "leads_to"
+    },
+    {
+      "edge_id": "c03",
+      "source": "e03",
+      "target": "e04",
+      "relation": "leads_to"
+    },
+    {
+      "edge_id": "c04",
+      "source": "e04",
+      "target": "e05",
+      "relation": "leads_to"
+    }
+  ]
+}

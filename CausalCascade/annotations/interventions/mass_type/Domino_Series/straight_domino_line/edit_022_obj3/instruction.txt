@@ -1,0 +1,1 @@
+For the tilted teal domino at the left end of the line, set the mass to 0.0151305 kg, approximately 0.030261 times the original mass.

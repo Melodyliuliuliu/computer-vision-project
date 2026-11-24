@@ -1,0 +1,7 @@
+[
+  {
+    "op": "replace",
+    "path": "/objects/Heavy_Top_Block/rigid_body/mass",
+    "value": 10.60186166116
+  }
+]

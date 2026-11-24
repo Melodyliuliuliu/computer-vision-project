@@ -1,0 +1,30 @@
+{
+  "scene_id": "Instability_Series/ball_drop_stack_collapse",
+  "edit_id": "edit_004_obj01",
+  "edit_type": "move",
+  "operation": "set_location",
+  "object_index": 1,
+  "object_key": "Ball",
+  "object_alias": "the blue falling ball",
+  "original_location": [
+    0.0,
+    1.0,
+    5.199999809265137
+  ],
+  "new_location": [
+    0.9999995231628418,
+    1.0,
+    5.199999809265137
+  ],
+  "delta_world": [
+    0.9999995231628418,
+    0.0,
+    0.0
+  ],
+  "semantic_direction": "laterally_toward_front_of_scene",
+  "reference_scale": {
+    "type": "object_diameter",
+    "multiplier": 1.0
+  },
+  "rotation_unchanged": true
+}
