@@ -8,7 +8,10 @@ Requirements (only needed to REGENERATE the CSVs; the outputs are committed):
     pip install bpy pandas pyarrow pillow        # bpy = Blender as a Python module
 
 Run from the repo root:
-    python experiments/goalforce_causalcascade/make_goalforce_csvs.py
+    python experiments/goalforce_causalcascade/make_goalforce_csvs.py              # force 30 -> inputs/
+    python experiments/goalforce_causalcascade/make_goalforce_csvs.py --force 100  # -> inputs_f100/
+Non-default forces get their own folder and a "__f<force>" name suffix, so outputs of
+different force settings never collide in Goal Force's output directory.
 
 ------------------------------------------------------------------------------------
 Goal Force input conventions (from goal-force/src/goal_force/unified_dataset.py,
@@ -41,7 +44,7 @@ Design choices for this experiment (edit FORCE_MAGNITUDE / mass encoding below):
     counterfactual 1.0. Real kg values are kept in manifest.csv.
   * Prompts: the official matched Level 1 prompts from tables/rq2_pairs.parquet.
 """
-import json, math, os, shutil, sys
+import argparse, json, math, os, shutil, sys
 from pathlib import Path
 
 import pandas as pd
@@ -57,7 +60,8 @@ SCENES = [
     "Instability_Series/simple_platform_collapse",
 ]
 GF_W, GF_H = 832, 480
-FORCE_MAGNITUDE = 30.0        # weakest force seen in Goal Force training = a "nudge"
+FORCE_MAGNITUDE = 30.0        # default: weakest force seen in Goal Force training = a "nudge"
+SUFFIX = ""                   # set by --force for non-default forces
 MASS_LIGHT, MASS_HEAVY = 1.0, 4.0
 
 
@@ -150,11 +154,26 @@ def write_sample(name, src_png, row):
     return f"{name}.csv"
 
 
+def _name(n):
+    return f"{n}{SUFFIX}"
+
+
 # ----------------------------------------------------------------------------- main
 def main():
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    OUT.mkdir(parents=True)
+    global OUT, FORCE_MAGNITUDE, SUFFIX
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--force", type=float, default=30.0,
+                    help="direct-force magnitude (Goal Force range 30-400)")
+    a = ap.parse_args()
+    FORCE_MAGNITUDE = a.force
+    if a.force != 30.0:
+        SUFFIX = f"__f{a.force:g}"
+        OUT = OUT.parent / f"inputs_f{a.force:g}"
+    # remove only what this script generates (keep object_boxes.json, previews/, ...)
+    OUT.mkdir(parents=True, exist_ok=True)
+    for f in [*OUT.glob("*.csv"), OUT / "all_csvs.txt"]:
+        f.unlink(missing_ok=True)
+    shutil.rmtree(OUT / "images", ignore_errors=True)
 
     pairs = pd.read_parquet(
         CC / "tables/rq2_pairs.parquet",
@@ -195,21 +214,21 @@ def main():
                 else:
                     rf = gf_row("", r.factual_prompt_level1, prj_f, ang, -1, g_fact[obj], m_f)
                     rc = gf_row("", r.counterfactual_prompt_level1, prj_c, ang, -1, g_fact[obj], m_c)
-                f_csv = write_sample(f"{tag}__factual", CC / r.factual_initial_frame_path, rf)
+                f_csv = write_sample(_name(f"{tag}__factual"), CC / r.factual_initial_frame_path, rf)
                 mass_info = dict(mass_object=obj, mass_kg_factual=old_kg, mass_kg_cf=new_kg,
                                  mass_gf_factual=m_f, mass_gf_cf=m_c)
             else:
                 if scene not in done_factual:
                     rf = gf_row("", r.factual_prompt_level1, prj_f, ang, -1, (0, 0), -1)
                     done_factual[scene] = write_sample(
-                        f"{sname}__factual", CC / r.factual_initial_frame_path, rf)
+                        _name(f"{sname}__factual"), CC / r.factual_initial_frame_path, rf)
                 f_csv = done_factual[scene]
                 rc = gf_row("", r.counterfactual_prompt_level1, prj_c, ang, -1, (0, 0), -1)
                 mass_info = {}
                 if not (0 <= prj_c[0] < GF_W and 0 <= prj_c[1] < GF_H):
                     print(f"  WARNING {tag}: trigger outside frame {prj_c}")
 
-            c_csv = write_sample(f"{tag}__cf", CC / r.counterfactual_initial_frame_path, rc)
+            c_csv = write_sample(_name(f"{tag}__cf"), CC / r.counterfactual_initial_frame_path, rc)
             manifest.append(dict(
                 pair_id=r.pair_id, scene_id=scene, edit_type=r.edit_type, edit_id=eid,
                 factual_csv=f_csv, counterfactual_csv=c_csv, trigger=trig,
@@ -221,7 +240,7 @@ def main():
     pd.DataFrame(manifest).to_csv(OUT / "manifest.csv", index=False)
     csvs = sorted({m["factual_csv"] for m in manifest} | {m["counterfactual_csv"] for m in manifest})
     (OUT / "all_csvs.txt").write_text(
-        "\n".join(f"../experiments/goalforce_causalcascade/inputs/{c}" for c in csvs) + "\n")
+        "\n".join(f"../experiments/goalforce_causalcascade/{OUT.name}/{c}" for c in csvs) + "\n")
     print(f"{len(manifest)} pairs, {len(csvs)} generations -> {OUT}")
 
 

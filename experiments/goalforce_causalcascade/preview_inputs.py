@@ -1,7 +1,7 @@
 """Draw each Goal Force input (force arrow + mass blobs) on its first frame, exactly as
 Goal Force will see it (image stretched to 832x480, y measured from the bottom).
 Writes inputs/previews/<name>.png. Run from the repo root after make_goalforce_csvs.py."""
-import math
+import argparse, math
 from pathlib import Path
 
 import pandas as pd
@@ -13,6 +13,10 @@ MIN_F, MAX_F, MIN_M, MAX_M = 30.0, 400.0, 1.0, 4.0     # hard-coded in inference
 
 
 def main():
+    global IN
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--inputs", default="inputs", help="e.g. inputs_f100")
+    IN = IN.parent / ap.parse_args().inputs
     out = IN / "previews"
     out.mkdir(exist_ok=True)
     for csv in sorted(IN.glob("*.csv")):

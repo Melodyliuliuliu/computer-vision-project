@@ -1,0 +1,28 @@
+image,projectile_force_angle,projectile_force_magnitude,projectile_coordx,projectile_coordy,projectile_mass,target_indirect_force_angle,target_indirect_force_magnitude,target_coordx,target_coordy,target_mass,width,height,caption
+straight_domino_line__mass__edit_022_obj3__factual__f200.png,4.2,200.0,236,168,4.0,-1.0,-1.0,0,0,-1,832,480,"Generate a physically realistic continuation video by predicting the subsequent physical evolution from the given fixed-camera first frame.
+
+Important instructions:
+- Preserve the fixed camera view.
+- The first frame is authoritative for all visible geometry, object sizes, initial poses, contact relations, spatial layout, and camera view.
+- Treat only the listed dynamic active objects and dynamic active object groups as freely moving rigid bodies.
+- Treat anchored static colliders as fixed to the world.
+
+Global rigid-body convention:
+- All rigid bodies use friction = 0.50, restitution = 0.10, linear damping = 0.04, angular damping = 0.10.
+- For every rigid body, the geometric center is also its center of mass.
+
+Dynamic active objects:
+- back-left tall vase: one tall vase behind the left side of the domino row. Mass = 2.0 kg.
+- back-center tall vase: one tall vase behind the middle of the domino row. Mass = 2.0 kg.
+- right tall vase: one tall vase near the right side of the domino row. Mass = 2.0 kg.
+
+Dynamic active object groups:
+- straight domino row: the five upright dominoes arranged in a short straight line across the tiled tabletop. This group contains 5 dominoes. Each object has mass = 0.5 kg.
+
+Anchored static objects:
+- tiled tabletop surface: the flat surface supporting the domino row and vases.
+- left wall: the fixed vertical wall along the left side.
+- rear wall: the fixed vertical wall behind the scene.
+
+Decorative context:
+- The rest of objects are anchored static decorators which should remain visually unchanged."

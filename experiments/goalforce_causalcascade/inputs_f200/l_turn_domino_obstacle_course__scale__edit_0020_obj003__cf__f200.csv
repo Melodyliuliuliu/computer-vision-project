@@ -1,0 +1,25 @@
+image,projectile_force_angle,projectile_force_magnitude,projectile_coordx,projectile_coordy,projectile_mass,target_indirect_force_angle,target_indirect_force_magnitude,target_coordx,target_coordy,target_mass,width,height,caption
+l_turn_domino_obstacle_course__scale__edit_0020_obj003__cf__f200.png,24.0,200.0,375,112,-1,-1.0,-1.0,0,0,-1,832,480,"Generate a physically realistic continuation video by predicting the subsequent physical evolution from the given fixed-camera first frame.
+
+Important instructions:
+- Preserve the fixed camera view.
+- The first frame is authoritative for all visible geometry, object sizes, initial poses, contact relations, spatial layout, and camera view.
+- Treat only the listed dynamic active objects and dynamic active object groups as freely moving rigid bodies.
+- Treat anchored static colliders as fixed to the world.
+
+Global rigid-body convention:
+- All rigid bodies use friction = 0.50, restitution = 0.10, linear damping = 0.04, angular damping = 0.10.
+- For every rigid body, the geometric center is also its center of mass.
+
+Dynamic active objects:
+- final target sphere: the sphere placed after the corner at the end of the L-shaped domino path. Mass = 1.0 kg.
+
+Dynamic active object groups:
+- L-shaped domino path: the seven upright dominoes that start on the left and turn toward the rear/right side. The last member of the first leg dominoes, counted from the group's start, is visibly shorter relative to neighboring members. This group contains 7 dominoes. Each object has mass = 1.0 kg.
+
+Anchored static objects:
+- tabletop surface: the flat surface supporting the L-shaped domino path.
+- rear wall: the fixed vertical wall behind the scene.
+
+Decorative context:
+- The rest of objects are anchored static decorators which should remain visually unchanged."

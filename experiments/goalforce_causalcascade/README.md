@@ -35,6 +35,22 @@ bash ../experiments/goalforce_causalcascade/run_inference.sh
 Outputs go to `goal-force/checkpoints/goal_force/step-3000-videos/`, named after the
 image (for example `step-3000_straight_domino_line__mass__edit_009_obj1__cf__...mp4`).
 
+## Force-magnitude variants
+
+`inputs/` uses force 30. `inputs_f100/` and `inputs_f200/` are the same 35 samples,
+with only `projectile_force_magnitude` changed and a `__f100` / `__f200` name suffix,
+so outputs never collide. These variants exist because at force 30 the
+straight-domino chain slows down and the clip ends before the last domino is hit.
+
+```bash
+INPUTS=inputs_f100 bash ../experiments/goalforce_causalcascade/run_inference.sh
+python experiments/goalforce_causalcascade/eval_cf.py --manifest experiments/goalforce_causalcascade/inputs_f100/manifest.csv ...
+python experiments/goalforce_causalcascade/object_timing.py --manifest experiments/goalforce_causalcascade/inputs_f100/manifest.csv ...
+```
+
+Regenerate with `make_goalforce_csvs.py --force 100` and
+`preview_inputs.py --inputs inputs_f100`.
+
 ## Evaluate (CausalCascade RQ2 Effect / Preserve IoU)
 
 ```bash

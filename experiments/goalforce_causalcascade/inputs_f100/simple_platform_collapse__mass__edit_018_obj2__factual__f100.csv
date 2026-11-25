@@ -1,0 +1,26 @@
+image,projectile_force_angle,projectile_force_magnitude,projectile_coordx,projectile_coordy,projectile_mass,target_indirect_force_angle,target_indirect_force_magnitude,target_coordx,target_coordy,target_mass,width,height,caption
+simple_platform_collapse__mass__edit_018_obj2__factual__f100.png,-82.3,100.0,402,256,-1,-1.0,-1.0,492,123,1.0,832,480,"Generate a physically realistic continuation video by predicting the subsequent physical evolution from the given fixed-camera first frame.
+
+Important instructions:
+- Preserve the fixed camera view.
+- The first frame is authoritative for all visible geometry, object sizes, initial poses, contact relations, spatial layout, and camera view.
+- Treat only the listed dynamic active objects and dynamic active object groups as freely moving rigid bodies.
+- Treat anchored static colliders as fixed to the world.
+
+Global rigid-body convention:
+- All rigid bodies use friction = 0.50, restitution = 0.10, linear damping = 0.04, angular damping = 0.10.
+- For every rigid body, the geometric center is also its center of mass.
+
+Dynamic active objects:
+- central tower pillar: the red vertical pillar supporting the long dark top block. Mass = 10.0 kg.
+- long dark top block: the long dark rectangular block balanced above the central pillar. Mass = 50.0 kg.
+- right target pillar: the green upright pillar standing to the right of the central tower. Mass = 5.0 kg.
+
+Dynamic active object groups:
+- None.
+
+Anchored static objects:
+- wooden tabletop surface: the flat surface beneath the tower and target pillar.
+
+Decorative context:
+- The rest of objects are anchored static decorators which should remain visually unchanged."

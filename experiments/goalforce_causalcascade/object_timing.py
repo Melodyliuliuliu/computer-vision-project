@@ -122,12 +122,14 @@ def main():
     ap.add_argument("--gen-dir", type=Path, required=True)
     ap.add_argument("--cc-root", type=Path, default=HERE.parents[1] / "CausalCascade")
     ap.add_argument("--out-dir", type=Path, default=HERE / "results" / "timing")
+    ap.add_argument("--manifest", type=Path, default=HERE / "inputs" / "manifest.csv",
+                    help="e.g. inputs_f100/manifest.csv for another force setting")
     ap.add_argument("--no-plots", action="store_true")
     ap.add_argument("--include-bystanders", action="store_true",
                     help="also use objects outside the event graph in the pair metrics")
     args = ap.parse_args()
 
-    man = pd.read_csv(HERE / "inputs" / "manifest.csv")
+    man = pd.read_csv(args.manifest)
     boxes = json.loads((HERE / "inputs" / "object_boxes.json").read_text())
     args.out_dir.mkdir(parents=True, exist_ok=True)
     obj_rows, pair_rows, skipped = [], [], []

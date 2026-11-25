@@ -13,7 +13,9 @@ DEVICE_ID=${DEVICE_ID:-0}
 WORLD_SIZE=${WORLD_SIZE:-1}
 SEED=${SEED:-5}
 MODEL_CKPT_PATH=${MODEL_CKPT_PATH:-"checkpoints/goal_force/step-3000.safetensors"}
-LIST="../experiments/goalforce_causalcascade/inputs/all_csvs.txt"
+# Another force setting: INPUTS=inputs_f100 bash ../experiments/goalforce_causalcascade/run_inference.sh
+INPUTS=${INPUTS:-inputs}
+LIST=${LIST:-"../experiments/goalforce_causalcascade/${INPUTS}/all_csvs.txt"}
 
 mapfile -t EXAMPLE_PATHS < <(grep -v '^$' "$LIST")
 echo "Running ${#EXAMPLE_PATHS[@]} CSVs (device ${DEVICE_ID}/${WORLD_SIZE}, seed ${SEED})"
