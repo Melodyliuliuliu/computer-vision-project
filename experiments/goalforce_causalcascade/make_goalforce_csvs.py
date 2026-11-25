@@ -140,7 +140,11 @@ def gf_row(image, caption, prj_xy, angle, prj_mass, tgt_xy, tgt_mass):
 def write_sample(name, src_png, row):
     """One CSV per generation (like goal-force/datasets/examples), images/ next to it."""
     (OUT / "images").mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(src_png, OUT / "images" / f"{name}.png")
+    # CausalCascade frames are palette PNGs (PIL mode "P"). Goal Force's loader applies
+    # ToTensor() without .convert("RGB"), which turns a palette image into a 1-channel
+    # map of palette INDICES (looks like a wrong grayscale). Save as true RGB instead.
+    from PIL import Image
+    Image.open(src_png).convert("RGB").save(OUT / "images" / f"{name}.png")
     row = dict(row, image=f"{name}.png")
     pd.DataFrame([row]).to_csv(OUT / f"{name}.csv", index=False)
     return f"{name}.csv"
