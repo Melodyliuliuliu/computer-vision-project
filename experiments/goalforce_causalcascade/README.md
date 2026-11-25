@@ -35,6 +35,22 @@ bash ../experiments/goalforce_causalcascade/run_inference.sh
 Outputs go to `goal-force/checkpoints/goal_force/step-3000-videos/`, named after the
 image (for example `step-3000_straight_domino_line__mass__edit_009_obj1__cf__...mp4`).
 
+## Evaluate (CausalCascade RQ2 Effect / Preserve IoU)
+
+```bash
+pip install opencv-python numpy pandas
+python experiments/goalforce_causalcascade/eval_cf.py \
+  --gen-dir /path/to/step-3000-videos \
+  --out-dir experiments/goalforce_causalcascade/results
+```
+
+The script writes `results/per_pair.csv`, `results/summary_scene_macro.csv` and
+`results/missing.json`. The metric code is CausalCascade's own
+`metrics/counterfactual/cf_effect_metrics.py`, copied unmodified into `third_party/`
+(MIT license). Their driver script expects all 225 pairs, so `eval_cf.py` does the
+same pairing and the same scene-macro aggregation for our 21 pairs. A sanity check
+that feeds the reference videos in as "generated" gives 1.000 on every metric.
+
 ## How inputs were built
 
 - **Coordinates.** Each `.blend` is opened with `bpy`, the intervention from `diff.json`
@@ -59,5 +75,6 @@ image (for example `step-3000_straight_domino_line__mass__edit_009_obj1__cf__...
   trigger. Goal Force cannot run with no force at all: both force fields set to -1
   breaks its control-signal code.
 - Reference videos are 854×480 at 24 fps, 100–120 frames. Goal Force outputs 832×480
-  at 15 fps, 81 frames. Match spatial size and timing before computing the
-  CausalCascade IoU metrics.
+  at 15 fps, 81 frames. The counterfactual metrics resize everything to 256×256 and
+  pool over the whole clip, so no alignment is needed. What can still differ is how
+  much physical time each clip covers.
