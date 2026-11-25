@@ -51,6 +51,38 @@ The script writes `results/per_pair.csv`, `results/summary_scene_macro.csv` and
 same pairing and the same scene-macro aggregation for our 21 pairs. A sanity check
 that feeds the reference videos in as "generated" gives 1.000 on every metric.
 
+## Object-level timing (supplement to the official metrics)
+
+The official CF metrics pool motion over the whole clip, so they miss whether the
+cascade reaches each object and in what order. `object_timing.py` takes the 2D box of
+every dynamic object (`inputs/object_boxes.json`, projected from the `.blend` with the
+edit applied) and measures, in all four videos of a pair, whether the object moves and
+when it starts.
+
+```bash
+python experiments/goalforce_causalcascade/object_timing.py \
+  --gen-dir /path/to/step-3000-videos \
+  --out-dir experiments/goalforce_causalcascade/results/timing
+```
+
+Outputs:
+- `per_object.csv`: moved / onset time for each object in each video
+- `per_pair_timing.csv`, with these columns:
+  - `factual_moved_acc`, `cf_moved_acc`: share of event-graph objects whose
+    moved/not-moved status matches the reference
+  - `flip_recall`: for objects whose status changes between the reference factual
+    and counterfactual (the causal effect of the edit), whether the generated pair
+    changes them the same way
+  - `false_flips`: objects the generated pair changes but the reference does not
+  - `factual_order_acc`, `cf_order_acc`: pairwise agreement of start order
+- one plot of the motion curves per pair
+
+Only event-graph participants count toward pair metrics by default. Static bystanders
+(vases, cones) show motion whenever something falls in front of them. A box cannot
+detect interpenetration, so that still needs eyeballing. Feeding the reference videos
+in as "generated" gives 1.00 on every pair. `make_object_boxes.py` (needs `bpy`)
+regenerates the boxes.
+
 ## How inputs were built
 
 - **Coordinates.** Each `.blend` is opened with `bpy`, the intervention from `diff.json`
